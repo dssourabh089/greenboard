@@ -749,3 +749,51 @@ header.logo {
     .slide-caption { font-size: 14px; padding: 12px; }
     .slide-btn { padding: 8px 12px; font-size: 16px; }
 }
+/* মোবাইলে ডোনেট বাটন এবং অন্যান্য বাটন ফিক্স করার কোড */
+@media (max-width: 600px) {
+    /* হেডার বা নেভিগেশনের ডোনেট বাটন */
+    header nav a.nav-cta, 
+    #donate-nav-btn {
+        padding: 8px 12px !important; /* প্যাডিং কিছুটা কমিয়ে আনা হলো */
+        font-size: 13px !important;    /* ফন্ট সাইজ মোবাইলের জন্য পারফেক্ট করা হলো */
+        white-space: nowrap !important; /* লেখাটি যেন কখনো ভেঙে দুই লাইন না হয় বা বাইরে না যায় */
+        display: inline-block !important;
+    }
+
+    /* পপআপের ভেতরের মেইন সাবমিট বাটনসমূহ */
+    .submit-btn, 
+    #generate-qr-btn, 
+    #cancel-donate-btn, 
+    #confirm-payment-btn {
+        width: 100% !important;        /* বাটনটি স্ক্রিনের পুরো চওড়া জায়গা নেবে */
+        padding: 12px 15px !important;
+        font-size: 14px !important;    /* ভেতরের লেখাটি বাটন অনুযায়ী সুন্দর ফিট হবে */
+        box-sizing: border-box !important;
+    }
+}
+/* মোবাইলে ডোনেট বাটন ফিক্স করার চূড়ান্ত সমাধান */
+@media (max-width: 600px) {
+    
+    /* হেডার নেভিগেশন এরিয়া ফিক্স */
+    header nav {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    /* ডোনেট বাটনটিকে জোরপূর্বক বড় ও লেখা ফিট করা */
+    header nav a.nav-cta, 
+    #donate-nav-btn,
+    header nav a[href="#join"] {
+        width: auto !important;          /* বাটনটি নিজের সাইজ নিজে নেবে */
+        min-width: 110px !important;     /* সর্বনিম্ন একটা চওড়া সাইজ লক করা হলো */
+        max-width: fit-content !important; 
+        padding: 8px 16px !important;    /* ডানে-বামে পর্যাপ্ত জায়গা বা প্যাডিং */
+        font-size: 14px !important;      /* লেখা স্পষ্ট দেখানোর সাইজ */
+        white-space: nowrap !important;  /* লেখা ভেঙে বাইরে যাওয়া ১০০% বন্ধ */
+        display: inline-block !important;
+        flex-shrink: 0 !important;       /* নেভিগেশন বার বাটনটিকে চেপে ছোট করতে পারবে না */
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+}
