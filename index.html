@@ -1,18 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+  
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenboard Foundation | Planetary Action Network</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<div id="about-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 500px; text-align: left; padding: 35px;">
+        <span class="close-about-modal" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa;">&times;</span>
+        <h2 style="color: #3a5a40; margin-bottom: 15px; font-size: 24px;">🌱 About Greenboard Foundation</h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 20px;">
+            Greenboard Foundation is a voluntary, non-profit organization (NGO) dedicated to building a greener, healthier, and more sustainable world. We firmly believe that environmental protection and humanitarian service are the core pillars of a progressive society.
+        </p>
+        <button id="close-about-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Close</button>
+    </div>
+</div>
+<div id="vision-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 500px; text-align: left; padding: 35px;">
+        <span class="close-vision-modal" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa;">&times;</span>
+        <h2 style="color: #3a5a40; margin-bottom: 15px; font-size: 24px;">🌱 Our Vision & Mission</h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #333; margin-bottom: 20px;">
+            Our mission is to restore ecological balance while standing firmly by people in times of emergency to serve humanity.
+        </p>
+        <button id="close-vision-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Close</button>
+    </div>
+</div>
+<div id="work-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 600px; text-align: left; padding: 35px; max-height: 85vh; overflow-y: auto;">
+        <span class="close-work-modal" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa;">&times;</span>
+        <h2 style="color: #3a5a40; margin-bottom: 20px; font-size: 24px;">🛠️ Our Work & Initiatives</h2>
+        
+        <div style="font-size: 15px; line-height: 1.6; color: #333; margin-bottom: 25px;">
+            <p style="margin-bottom: 15px;"><strong>🌱 Tree Plantation Drives:</strong> To combat climate change and maintain ecological balance, we actively organize and execute large-scale tree plantation campaigns.</p>
+            
+            <p style="margin-bottom: 15px;"><strong>🩸 Blood Donation Camps:</strong> Guided by the belief that "blood saves lives," we regularly host voluntary blood donation camps to support patients in critical need.</p>
+            
+            <p style="margin-bottom: 15px;"><strong>🧹 Environmental Cleanliness:</strong> We conduct regular cleanliness drives to keep our surroundings waste-free, plastic-free, and pollution-free.</p>
+            
+            <p style="margin-bottom: 15px;"><strong>📢 Raising Public Awareness:</strong> We organize community programs and awareness campaigns to educate the public on environmental conservation, the importance of nature, and civic responsibilities.</p>
+        </div>
+        
+        <button id="close-work-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Close</button>
+    </div>
+</div>
+<div id="contact-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 450px; text-align: left; padding: 35px;">
+        <span class="close-contact-modal" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa;">&times;</span>
+        <h2 style="color: #3a5a40; margin-bottom: 20px; font-size: 24px;">📞 Get In Touch</h2>
+        
+        <div style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 25px;">
+            <p style="margin-bottom: 10px;"><strong>📞 Phone :</strong> +91 9366896945</p>
+            <p><strong>✉️ Email :</strong> greenboardfoundation2025@gmail.com</p>
+        </div>
+        
+        <button id="close-contact-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Close</button>
+    </div>
+</div>
+<div id="directors-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 450px; text-align: left; padding: 35px;">
+        <span class="close-directors-modal" style="position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa;">&times;</span>
+        <h2 style="color: #3a5a40; margin-bottom: 20px; font-size: 24px;">👔 Our Board of Directors</h2>
+        
+        <div style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 25px;">
+            <p style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #ddd;">
+                <strong>              
+The strategic vision and dedicated efforts behind the Greenboard Foundation are driven by our esteemed governing body:<br><b>
+Chairman: Tapan Yadav<br>
+President: Partha Chakraborty<br>
+Secretary: Satyajit Sinha<br>
+Cashier: Abhijit Sukladas<br>
+Media & Website Controller: Sourabh Deb</b>
+                </strong><br>
+                <span style="font-size: 14px; color: #666; font-style: italic;">Director / Managing Board Member</span>
+            </p>
+            </div>
+        
+        <button id="close-directors-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Close</button>
+    </div>
+</div>
+
 <body>
 
     <header>
-        <div class="logo">
-            <span class="logo-icon">🌱</span> Greenboard Foundation
+           <div style="display: flex; align-items: center; gap: 12px;">
+        <img src="https://lh3.googleusercontent.com/d/1GVasWYn6s_eEsczFNQtfAk884ucNvXRG" 
+             alt="Greenboard Foundation Logo" 
+             style="width: 50px !important; height: 50px !important; border-radius: 50% !important; object-fit: cover !important; border: 2px solid #3a5a40; display: block;">
+        
+        <span style="font-size: 20px; font-weight: 700; color: #3a5a40; letter-spacing: 0.5px;">Greenboard Foundation</span>
+    </div>
+        <nav> <button id="donate-nav-btn" class="main-btn" style="background-color: #588157; color: white;">Donate Now</button>
+
+<div id="payment-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Support Our Mission</h2>
+        <p>Enter the amount you wish to contribute to protect the planet.</p>
+        
+        <div class="amount-box">
+            <span class="currency">₹</span>
+            <input type="number" id="donate-amount" placeholder="500" min="10" required>
         </div>
-        <nav>
+        
+        <button id="generate-qr-btn" class="submit-btn">Generate Payment QR</button>
+        <button id="cancel-donate-btn" class="submit-btn" style="background-color: #6c757d; margin-top: 10px;">Cancel Process</button>
+        
+        <div id="qr-display-area" class="hidden">
+    <p style="margin-top: 15px; font-weight: bold; color: #3a5a40;">Scan this QR code using your UPI app to pay:</p>
+    
+    <div id="qrcode" style="margin: 20px auto; display: flex; justify-content: center;"></div>
+    <p id="showing-amount" style="font-size: 18px; font-weight: bold; margin-bottom: 15px;"></p>
+    
+    <button id="confirm-payment-btn" class="submit-btn" style="background-color: #2d6a4f;">I Have Paid Successfully</button>
+</div>
+
+<div id="payment-success-msg" class="hidden" style="padding: 20px 0; text-align: center;">
+    <div style="font-size: 50px; color: #2d6a4f; margin-bottom: 10px;">✅</div>
+    <h3 style="color: #2d6a4f; font-size: 22px; margin-bottom: 10px;">Payment Successful!</h3>
+    <p style="color: #555; font-size: 15px; line-height: 1.5; margin-bottom: 20px;">
+        Thank you so much for your generous contribution. Your support helps Greenboard Foundation protect nature and serve humanity.
+    </p>
+    <button id="success-close-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Done</button>
+</div>
+    </div>
+</div>
+                </form>
             <a href="#focus">Missions</a>
             <a href="#stats">Live Impact</a>
             <a href="#join" class="nav-cta">Join Collective</a>
@@ -31,12 +147,45 @@
             </div>
         </div>
     </section>
+ <section class="slideshow-section">
+    <div class="section-header">
+        <h2>Our Program Gallery</h2>
+        <p>Moments from our recent environmental and humanitarian campaigns.</p>
+    </div>
 
+    <div class="slider-container">
+        <div class="slider-wrapper" id="slider-wrapper">
+            
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80" alt="Tree Plantation">
+                <div class="slide-caption">Tree Plantation Drive - Greenboard Foundation</div>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=1200&q=80" alt="Blood Donation">
+                <div class="slide-caption">Voluntary Blood Donation Camp</div>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?auto=format&fit=crop&w=1200&q=80" alt="Cleanliness Drive">
+                <div class="slide-caption">Cleanliness & Waste Management Program</div>
+            </div>
+
+        </div>
+
+        <button class="slide-btn prev-btn" id="prev-slide">&#10094;</button>
+        
+        <button class="slide-btn next-btn" id="next-slide">&#10095;</button>
+
+        <div class="slider-dots" id="slider-dots"></div>
+    </div>
+</section>
     <section id="focus" class="focus-section">
         <div class="section-header">
             <h2>Our Active Directives</h2>
             <p>Targeted solutions engineered for immediate environmental restoration.</p>
         </div>
+        
         <div class="grid-container">
             <div class="focus-card">
                 <div class="card-icon">🌲</div>
@@ -44,14 +193,14 @@
                 <p>Restoring critical ecosystems and old-growth forests by native planting strategies to combat carbon emissions.</p>
             </div>
             <div class="focus-card">
-                <div class="card-icon">🌊</div>
-                <h3>ABCD</h3>
-                <p>abcdefghijklmnopqrstuvwxyz.</p>
+                <div class="card-icon">🩸</div>
+                <h3>Blood Donation Camps</h3>
+                <p>Guided by the belief that "blood saves lives," we regularly host voluntary blood donation camps to support patients in critical need.</p>
             </div>
             <div class="focus-card">
-                <div class="card-icon">💡</div>
-                <h3>ABCD</h3>
-                <p>abcdefghijklmnopqrstuvwxyz.</p>
+                <div class="card-icon">🧹</div>
+                <h3>Environmental Cleanliness </h3>
+                <p>We conduct regular cleanliness drives to keep our surroundings waste-free, plastic-free, and pollution-free.</p>
             </div>
         </div>
     </section>
@@ -92,7 +241,7 @@
                         <label for="form-message">Message / Statement of Intent</label>
                         <textarea id="form-message" rows="4" placeholder="How would you like to make an impact?" required></textarea>
                     </div>
-                    <button type="submit" id="submit-btn" class="submit-btn">Submit Application</button>
+                    <button type="submit" id="submit-btn" class="submit-btn">Submit form</button>
                 </form>
 
                 <div id="status-sending" class="status-alert hidden">
@@ -105,9 +254,56 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Greenboard Foundation. Open-source humanitarian environmental architecture.</p>
-    </footer>
+   <footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-column">
+            <h3>ABOUT US</h3>
+            <ul>
+                <li><a href="#" id="about-us-link">About Us</a></li>
+                <li><a href="#" id="vision-mission-link">Our Vision and Mission</a></li>
+                <li><a href="#" id="board-directors-link">Our Leadership Team</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>OUR WORK</h3>
+            <ul>
+                <li><a href="#" id="our-work-link">Our Work</a></li>
+                <li><a href="#">Tree Planting</a></li>
+                <li><a href="#">Plastic Clean</a></li>
+                <li><a href="#">Blood donations</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>DONATE</h3>
+            <ul>
+                <li><a href="#" id="online-donations-link">Online donations</a></li>
+                
+            </ul>
+
+            <h3 class="sub-heading">GET IN TOUCH</h3>
+            <ul>
+                <li><a href="#" id="contact-us-link">Contact Us</a></li>
+            </ul>
+
+            <h3 class="sub-heading">GET INVOLVED</h3>
+            <ul>
+                <li><a href="#">Future shaper</a></li>
+            </ul>
+        </div>
+
+       
+
+    </div>
+
+    <div class="footer-bottom">
+        
+        <p>The Greenboard Foundation © 2025</p>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
