@@ -94,39 +94,38 @@ Media & Website Controller: Sourabh Deb</b>
         <span style="font-size: 20px; font-weight: 700; color: #3a5a40; letter-spacing: 0.5px;">Greenboard Foundation</span>
     </div>
         <nav> <button id="donate-nav-btn" class="main-btn" style="background-color: #588157; color: white;">Donate Now</button>
-
 <div id="payment-modal" class="modal hidden">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <h2>Support Our Mission</h2>
-        <p>Enter the amount you wish to contribute to protect the planet.</p>
+        <p>Your contribution directly funds tree plantation campaigns, blood donation camps, and cleanliness drives.</p>
         
         <div class="amount-box">
-            <span class="currency">₹</span>
-            <input type="number" id="donate-amount" placeholder="500" min="10" required>
+            <span>₹</span>
+            <input type="number" id="donate-amount" placeholder="Enter amount (Min ₹10)" min="10">
         </div>
-        
-        <button id="generate-qr-btn" class="submit-btn">Generate Payment QR</button>
-        <button id="cancel-donate-btn" class="submit-btn" style="background-color: #6c757d; margin-top: 10px;">Cancel Process</button>
-        
-        <div id="qr-display-area" class="hidden">
-    <p style="margin-top: 15px; font-weight: bold; color: #3a5a40;">Scan this QR code using your UPI app to pay:</p>
-    
-    <div id="qrcode" style="margin: 20px auto; display: flex; justify-content: center;"></div>
-    <p id="showing-amount" style="font-size: 18px; font-weight: bold; margin-bottom: 15px;"></p>
-    
-    <button id="confirm-payment-btn" class="submit-btn" style="background-color: #2d6a4f;">I Have Paid Successfully</button>
-</div>
 
-<div id="payment-success-msg" class="hidden" style="padding: 20px 0; text-align: center;">
-    <div style="font-size: 50px; color: #2d6a4f; margin-bottom: 10px;">✅</div>
-    <h3 style="color: #2d6a4f; font-size: 22px; margin-bottom: 10px;">Payment Successful!</h3>
-    <p style="color: #555; font-size: 15px; line-height: 1.5; margin-bottom: 20px;">
-        Thank you so much for your generous contribution. Your support helps Greenboard Foundation protect nature and serve humanity.
-    </p>
-    <button id="success-close-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Done</button>
-</div>
+        <button id="generate-qr-btn" class="submit-btn">Generate Payment QR</button>
+
+        <div id="qr-display-area" class="hidden">
+            <p style="margin-top: 15px; font-weight: bold; color: #3a5a40;">Scan this QR code using your UPI app to pay:</p>
+            <div id="qrcode" style="margin: 20px auto; display: flex; justify-content: center;"></div>
+            <p id="showing-amount" style="font-size: 18px; font-weight: bold; margin-bottom: 15px;"></p>
+            <button id="confirm-payment-btn" class="submit-btn" style="background-color: #2d6a4f; margin-bottom: 15px;">I Have Paid Successfully</button>
+        </div>
+
+        <div id="payment-success-msg" class="hidden" style="padding: 20px 0; text-align: center;">
+            <div style="font-size: 50px; color: #2d6a4f; margin-bottom: 10px;">✅</div>
+            <h3 style="color: #2d6a4f; font-size: 22px; margin-bottom: 10px;">Payment Successful!</h3>
+            <p style="color: #555; font-size: 15px; line-height: 1.5; margin-bottom: 20px;">
+                Thank you so much for your generous contribution. Your support helps Greenboard Foundation protect nature and serve humanity.
+            </p>
+            <button id="success-close-btn" class="submit-btn" style="background-color: #3a5a40; width: auto; padding: 10px 25px;">Done</button>
+        </div>
+
+        <button id="cancel-donate-btn" class="submit-btn" style="background-color: #6c757d; margin-top: 10px;">Cancel Process</button>
     </div>
+</div>
 </div>
                 </form>
             <a href="#focus">Missions</a>
