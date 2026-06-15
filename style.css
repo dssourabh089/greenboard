@@ -328,7 +328,82 @@ header nav a.nav-cta:hover {
 .submit-btn:hover {
     background-color: var(--bright-green);
 }
+/* --- পেমেন্ট পপআপ (Modal) স্টাইল --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
 
+.modal-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-modal:hover {
+    color: var(--bg-dark);
+}
+
+.amount-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 5px 15px;
+    background-color: #fafafa;
+}
+
+.amount-box .currency {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-green);
+    margin-right: 10px;
+}
+
+.amount-box input {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+    outline: none;
+}
+
+#qrcode img {
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 /* --- Form Status Messaging Elements --- */
 .status-alert {
     margin-top: 20px;
@@ -371,9 +446,306 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Response Breakpoints */
+/* Response Breakpoints 
 @media (max-width: 900px) {
     header nav { display: none; }
     .form-wrapper { grid-template-columns: 1fr; gap: 40px; }
-    .hero-container h1 { font-size: 42px; }
+    .hero-container h1 { font-size: 42px; }*/
+    /* --- মোবাইল এবং ট্যাবলেটের জন্য রেসপন্সিভ কোড --- */
+@media (max-width: 900px) {
+    /* হেডার বা নেভিগেশন বার ঠিক করা */
+    header {
+        padding: 15px 5%;
+        flex-direction: column; /* লোগো উপরে এবং মেনু নিচে দেখাবে */
+        gap: 10px;
+        position: relative; /* স্ক্রিন স্ক্রল করার সময় মেনু আটকে থাকবে না */
+    }
+
+    header nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* হিরো বা মেইন ব্যানার সেকশন */
+    .hero {
+        height: auto;
+        padding: 120px 5% 60px 5%; /* মোবাইল মেনুর জন্য উপরে কিছুটা জায়গা রাখা */
+        text-align: center;
+    }
+
+    .hero-container h1 {
+        font-size: 32px; /* মোবাইলে লেখার সাইজ ছোট করা */
+    }
+
+    .action-row {
+        flex-direction: column; /* বাটনগুলো একটির নিচে আরেকটি আসবে */
+        gap: 10px;
+    }
+
+    .main-btn, .outline-btn {
+        /* বাটনগুলো স্ক্রিনের পুরো চওড়া হবে */
+        width: 30%; 
+        height: 20%;
+        text-align: center;
+    }
+
+    /* কার্ড গ্রিড সেকশন */
+    .grid-container {
+        grid-template-columns: 1fr; /* ৩টি কার্ড পাশাপাশি না দেখিয়ে একটির নিচে আরেকটি দেখাবে */
+        gap: 20px;
+    }
+
+    /* লাইভ স্ট্যাটাস বা পরিসংখ্যান */
+    .stats-bar {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* রেজিস্ট্রেশন এবং গুগল ফর্ম সেকশন */
+    .form-wrapper {
+        grid-template-columns: 1fr; /* ফর্ম এবং লেখা একটির নিচে আরেকটি আসবে */
+        gap: 30px;
+    }
+
+    .form-info h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .form-box {
+        padding: 25px 20px; /* ফর্মের ভেতরের খালি জায়গা মোবাইলের উপযোগী করা */
+    }
+}
+/* --- নতুন প্রফেশনাল ফুটার স্টাইল --- */
+.main-footer {
+    background-color: #f4f4f4; /* ছবির মতো হালকা ছাই কালার ব্যাকগ্রাউন্ড */
+    color: #555555;
+    padding: 60px 8% 30px 8%;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.footer-column .sub-heading {
+    margin-top: 25px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #000000; /* হোভার করলে কালো হবে */
+}
+
+/* সার্টিফিকেশন ব্যাজের স্টাইল (ছবির লাল-নীল লোগোটির মতো একটি ডেমো বক্স) */
+.badge-column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.certification-badge {
+    background: linear-gradient(to bottom, #f00000 60%, #002f6c 40%);
+    color: white;
+    padding: 20px 15px;
+    width: 150px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* ফুটারের নিচের কপিরাইট অংশ */
+.footer-bottom {
+    border-top: 1px solid #dddddd;
+    padding-top: 25px;
+    font-size: 14px;
+    color: #777777;
+    line-height: 1.8;
+}
+
+/* রেসপন্সিভ (মোবাইলের জন্য যাতে কেটে না যায়) */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 40px 5% 20px 5%;
+        text-align: left;
+    }
+    .footer-container {
+        grid-template-columns: 1fr; /* মোবাইলে সবগুলো কলাম নিচে নিচে আসবে */
+        gap: 30px;
+    }
+    .badge-column {
+        justify-content: center; /* মোবাইলে ব্যাজটি মাঝখানে দেখাবে */
+    }
+    /* --- ইমেজ লোগো স্টাইল --- */
+header.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo-img {
+    width: 45px;        /* লোগোটির সঠিক চওড়া সাইজ */
+    height: 45px;       /* লোগোটির উচ্চতা */
+    border-radius: 50%;  /* লোগোটি একদম গোল দেখাবে */
+    object-fit: cover;
+    border: 1.5px solid var(--accent-green); /* চারপাশে হালকা বর্ডার */
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 10%;
+    color: var(--accent-green);
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 10%) {
+    header .logo {
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+}
+}
+/* --- আপডেট করা নিখুঁত ফটো স্লাইডশো স্টাইল --- */
+.slideshow-section {
+    padding: 60px 10%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.slider-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* অতিরিক্ত ছবি লুকিয়ে রাখবে */
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    height: 450px; /* ডেক্সটপের জন্য ফিক্সড উচ্চতা */
+}
+
+/* সবগুলো স্লাইডকে একটির ওপর আরেকটি সাজিয়ে রাখা */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* শুরুতে সব ছবি অদৃশ্য থাকবে */
+    transition: opacity 0.8s ease-in-out; /* স্মুথ ফেইড অ্যানিমেশন */
+    z-index: 1;
+}
+
+/* শুধুমাত্র একটিভ বা চালু স্লাইডটি দৃশ্যমান হবে */
+.slide.active-slide {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ছবির ওপরের ক্যাপশন */
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    color: white;
+    padding: 25px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Prev & Next বাটন */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    color: #1b4332;
+    border: none;
+    font-size: 24px;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10; /* বাটন যেন ছবির উপরে থাকে */
+}
+
+.slide-btn:hover {
+    background: #3a5a40;
+    color: white;
+}
+
+.prev-btn { left: 20px; }nate 
+.next-btn { right: 20px; }
+
+/* নিচের কন্ট্রোল ডটসমূহ */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: white;
+    width: 24px;
+    border-radius: 10px;
+}
+
+/* মোবাইল স্ক্রিনের জন্য রেসপন্সিভ */
+@media (max-width: 768px) {
+    .slideshow-section { padding: 40px 5%; }
+    .slider-container { height: 280px; } /* মোবাইলে উচ্চতা স্বয়ংক্রিয়ভাবে কমে আসবে */
+    .slide-caption { font-size: 14px; padding: 12px; }
+    .slide-btn { padding: 8px 12px; font-size: 16px; }
 }
