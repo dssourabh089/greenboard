@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // ১. গুগল শিট কানেকশন (Google Sheets Data Integration)
     // ==========================================
-    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbw7c3eDTXJiDyhugAeq2-tFnej3Y29IeTKiLtSkqvH1vuYLE9VwTjA3YQQQn38V8-JePA/exec";
+    const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbyqMcT-iz9l84HpZLyJpSiGH6ULlx8vcs31hyjpkREbSPWFogj75n2VcHLllNBTEANu/exec";
 
     const dataForm = document.getElementById('eco-sheets-form');
     const submitButton = document.getElementById('submit-btn');
